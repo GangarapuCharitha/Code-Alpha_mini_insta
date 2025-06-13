@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #8374ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  height: 70px
+}
+
+.logo img {
+  height: 40px;
+}
+
+.welcome {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.auth-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.auth-links a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  padding-top: 80px; /* so content doesn't hide under fixed header */
+}

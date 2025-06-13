@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Insta</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="{% static 'images/logo.png' %}" alt="Logo">
+    </div>
+    <div class="welcome">
+      <h2>InstaShot</h2>
+    </div>
+    <div class="auth-links">
+      {% if user.is_authenticated %}
+        Hello, {{ user.username }} |
+        <a href="{% url 'logout' %}">Logouttttt</a>
+      {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Signuppp</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="main-content">
+<p><center>----Welcome to the Mini Insta---- </center></p>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

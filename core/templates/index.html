@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Feed</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post</button>
+</form>
+<hr>
+{% for post in posts %}
+    <div>
+        <p><a href="{% url 'profile' post.user.username %}">{{ post.user.username }}</a></p>
+        <img src="{{ post.image.url }}" width="300"><br>
+        <p>{{ post.caption }}</p>
+        <a href="{% url 'like_post' post.id %}">Like</a>
+    </div>
+    <hr>
+{% endfor %}
+{% endblock %}
